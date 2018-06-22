@@ -36,6 +36,15 @@ double Sphere::get_radius() const
     return r_;
 }
 
+std::ostream& Sphere::print(std::ostream& os) const
+{
+    Shape::print(os);
+    os << "Area: " << area() << ", \n";
+    os << "Volume: " << volume() << ", \n";
+    os << "Center: ("<< center_.x << ", " << center_.y << ", " << center_.z << "), \n";
+    os << "Radius:" << r_ << ", \n";
+    return os;
+}
 
 
 

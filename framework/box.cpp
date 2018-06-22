@@ -42,3 +42,13 @@ glm::vec3 Box::get_maximum() const
 {
     return maximum_;
 }
+
+std::ostream& Box::print(std::ostream& os) const
+{
+    Shape::print(os);
+    os << "Area: " << area() << ", \n";
+    os << "Volume: " << volume() << ", \n";
+    os << "Minimum: ("<<minimum_.x << ", " << minimum_.y << ", " << minimum_.z << "), \n";
+    os << "Maximum: ("<<maximum_.x << ", " << maximum_.y << ", " << maximum_.z << "), \n";
+    return os;
+}

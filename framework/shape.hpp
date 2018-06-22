@@ -19,6 +19,9 @@ class Shape
     std::string get_name() const;
     Color get_color() const;
 
+    //Aufgabe 5.4
+    virtual std::ostream& print(std::ostream& os) const;
+
 
     private:
     std::string name_;
@@ -26,5 +29,8 @@ class Shape
 
     
 };
+
+std::ostream& operator << (std::ostream& os, Shape const& s);
+
 
 #endif

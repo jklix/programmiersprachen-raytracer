@@ -7,7 +7,7 @@
 #include "../framework/sphere.hpp"
 #include "../framework/shape.hpp"
 
-//Aufgabe 5.2
+//Aufgabe 5.2/3
 TEST_CASE("area_volume","[5.2]")
 {
     //box
@@ -42,11 +42,30 @@ TEST_CASE("area_volume","[5.2]")
     REQUIRE(s2.get_color().r == 0.0f);
     REQUIRE(s2.get_color().g == 0.0f);
     REQUIRE(s2.get_color().b == 1.0f);
-    REQUIRE(s2.get_name().compare("Kugel") == 0.0);
-
-    
+    REQUIRE(s2.get_name().compare("Kugel") == 0.0);    
 }
 
+
+TEST_CASE("print", "[shape, box, sphere]")
+{
+  Color color {1.0f, 0.0f, 0.0f};
+  
+  glm::vec3 mini{20.0, 20.4, 30.0};
+  glm::vec3 maxi{60.0, 85.3, 33.7};
+  Box b1 {mini, maxi};
+  Box b2 {mini, maxi, "Box", color};
+
+  std::cout << b1 << "\n";
+  std::cout << b2 << "\n";
+
+  glm::vec3 center{50.0, 50.0, 50.0};
+  double radius {15.8};
+  Sphere s1 {center, radius};
+  Sphere s2 {center, radius, "Kugel", color};
+
+  std::cout << s1 << "\n";
+  std::cout << s2 << "\n";
+}
 
 
 

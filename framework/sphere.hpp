@@ -25,6 +25,9 @@ class Sphere: public Shape
     glm::vec3 get_center() const;
     double get_radius() const;
 
+    //Aufgabe 5.4
+    std::ostream& print(std::ostream& os) const override;
+
 
     private:
     double r_;
