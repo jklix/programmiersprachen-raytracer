@@ -5,9 +5,11 @@
 #include <math.h>
 #include <string>
 #include <iostream>
+#include <glm/gtx/intersect.hpp>
 
 #include "shape.hpp"
 #include "color.hpp"
+#include "Ray.hpp"
 
 
 
@@ -27,6 +29,9 @@ class Sphere: public Shape
 
     //Aufgabe 5.4
     std::ostream& print(std::ostream& os) const override;
+
+    //Aufgabe 5.6
+    bool intersect (Ray const& ray, float& distance) const;
 
 
     private:

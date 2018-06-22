@@ -72,7 +72,7 @@ TEST_CASE("print", "[shape, box, sphere]")
 TEST_CASE ("intersect_ray_sphere", "[intersect]")
 {
   //Ray
-  glm::vec3 ray_origin{0.0f, 0.0f, 0.0f};1
+  glm::vec3 ray_origin{0.0f, 0.0f, 0.0f};
   //ray direction has to be normalized !
   //you can use:
   // v = glm::normalize(some_vector)
@@ -88,7 +88,28 @@ TEST_CASE ("intersect_ray_sphere", "[intersect]")
     sphere_center,
     sphere_radius * sphere_radius, //squared radius !!!
     distance);
+  
   REQUIRE(distance == Approx(4.0f));
+
+
+  glm::vec3 center {0.0, 0.0, 5.0};
+  double radius {1.0};
+  Color color {0.0f, 0.0f, 1.0f};
+
+  Sphere s1 {center, radius, "Sphere 1", color};
+
+  float distance2 = 0.0f;
+  REQUIRE(!s1.intersect(Ray{}, distance));
+  REQUIRE(distance == Approx(-4.0f));
+
+  glm::vec3 center1 {0.0, 0.0, 6.0};
+
+  Sphere s2 {center1, radius, "Sphere 2", color};
+
+  float distance3 = 1.0f;
+  REQUIRE(!s2.intersect(Ray{}, distance));
+
+
 }
 
 

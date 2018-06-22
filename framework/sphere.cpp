@@ -1,4 +1,5 @@
 #include "sphere.hpp"
+#include <glm/gtx/intersect.hpp>
 
 
 Sphere::Sphere(glm::vec3 const& center, double const& radius):
@@ -44,6 +45,11 @@ std::ostream& Sphere::print(std::ostream& os) const
     os << "Center: ("<< center_.x << ", " << center_.y << ", " << center_.z << "), \n";
     os << "Radius:" << r_ << ", \n";
     return os;
+}
+
+bool Sphere::intersect (Ray const& ray, float& distance) const
+{
+    return glm::intersectRaySphere (ray.origin, ray.direction, center_, r_ * r_, distance);
 }
 
 
