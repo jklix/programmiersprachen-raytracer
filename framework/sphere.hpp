@@ -3,16 +3,21 @@
 
 #include <glm/vec3.hpp>
 #include <math.h>
+#include <string>
+#include <iostream>
 
 #include "shape.hpp"
+#include "color.hpp"
+
 
 
 
 class Sphere: public Shape 
 {
     public:
-    Sphere();
-    Sphere(glm::vec3 const& center_, double r_);
+    Sphere(glm::vec3 const& center, double const& radius);
+    Sphere(glm::vec3 const& center, double const& radius, std::string const& name, Color const& color);
+    ~Sphere();
 
     double area() const override;  //Flächeninhalt berechnen
     double volume() const override; //Volumen berechnen

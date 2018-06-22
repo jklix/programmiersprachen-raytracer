@@ -3,14 +3,17 @@
 
 #include <glm/vec3.hpp>
 #include "shape.hpp"
+#include <string>
+#include "color.hpp"
+#include <iostream>
 
 
 class Box: public Shape 
 {
     public:
 
-    Box();
-    Box(glm::vec3 minimum_, glm::vec3 maximum_);
+    Box(glm::vec3 const& minimum, glm::vec3 const& maximum);
+    Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name, Color const& color);
 
 
     double area() const override;

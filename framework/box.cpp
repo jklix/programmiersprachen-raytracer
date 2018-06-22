@@ -1,15 +1,17 @@
 #include "box.hpp"
 
-Box::Box(): //Standartkonstruktor
+Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum): 
 Shape(),
-minimum_(50.0,50.0,50.0),
-maximum_(100.0, 100.0, 100.0)
+minimum_(minimum),
+maximum_(maximum)
 {};
 
-//Box::Box(glm::vec3 minimum_, glm::vec3 maximum_):
-//minimum_(minimum_),
-//maximum_(maximum_)
-//{};
+Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name, Color const& color): 
+Shape(name, color),
+minimum_(minimum),
+maximum_(maximum)
+{};
+
 
 
 //Aufgabe 5.2
