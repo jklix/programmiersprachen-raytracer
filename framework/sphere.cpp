@@ -6,16 +6,22 @@ Sphere::Sphere(glm::vec3 const& center, double const& radius):
 Shape(),
 center_(center),
 r_(radius)
-{};
+{
+    std::cout << "Aufruf: Sphere: Konstruktor. \n";
+};
 
 Sphere::Sphere(glm::vec3 const& center, double const& radius, std::string const& name, Color const& color):
 Shape(name, color),
 center_(center),
 r_(radius)
-{};
+{
+    std::cout << "Aufruf: Sphere: Konstruktor. \n";
+};
 
 Sphere::~Sphere()
-{}
+{
+    std::cout << "Aufruf: Sphere: Destruktor. \n";
+}
 
 double Sphere::area() const
 {
